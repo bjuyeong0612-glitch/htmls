@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="text-align:center; padding-top:20%;">
+    <h3>When my education end?</h3>
+    <button onclick="dateFn()">calculate!</button><br><br>
+    <div id="area1" class="area"></div>
+
+    <script>
+        function dateFn(){
+            const area = document.querySelector("#area1");
+            const date1 = new Date();
+            
+
+            const date2 = new Date(2027, 4 - 1, 16); //month는 0부터 11임...
+            const dDay = (date2 - date1) / (24 * 60 * 60 * 1000);
+            const cdDay = Math.ceil(dDay);
+            //종강일까지 D-day
+            area.innerHTML = `how many days : ${cdDay} <br>`;//밀리세컨드로 반환.
+                        
+            // ms -> d
+            //1s  -> 1000ms
+            //1m  -> 60 * 1 second   -> 60 * 1000ms
+            //24hour   ->    24 * 60 * 60 * 1000ms
+
+
+
+        }
+    </script>
+</body>
+</html>
